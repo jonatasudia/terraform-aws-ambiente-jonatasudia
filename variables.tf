@@ -14,3 +14,9 @@ variable "ebs_block_device" {
   type        = list(any)
   default     = []
 }
+
+
+variable "database_name" {
+  type        = string
+  description = "Nome do RDS database"
+}
