@@ -1,6 +1,8 @@
-# terraform-aws-ambiente-jonatasudia
-Módulo do terraform para criação do ambiente sugerido pelo professor
+# terraform-aws-ambiente-professor
+Módulo para criação do ambiente sugerido pelo professor
+- Validação fork
 
+# TODO ( Para fazer)
 
-# TO DO
-- Uma etapa do pipeline que atualize automaticamente a versão do example
+ - Uma etapa do pipeline que atualize automaticamente a versão do example
+ - adicionar teste automatizado no pipeline

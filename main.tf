@@ -16,7 +16,7 @@ data "aws_ami" "ubuntu" {
 
 resource "aws_instance" "this" {
   ami           = data.aws_ami.ubuntu.id
-  instance_type = each.value["instance_type"]
+  instance_type = "t3.micro"
 
   dynamic "ebs_block_device" {
     for_each = var.ebs_block_device
@@ -29,8 +29,8 @@ resource "aws_instance" "this" {
   }
 
   tags = {
-    Name = var.name
-    Env  = var.environment
-    data = data.aws_ami.ubuntu.platform_details
+    Name       = var.name
+    Env        = var.environment
+    Plataforma = data.aws_ami.ubuntu.platform_details
   }
 }
