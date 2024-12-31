@@ -1,20 +1,19 @@
-variable "name" {
+variable "nome" {
   type        = string
   description = "Nome da instancia"
 }
 
 variable "environment" {
   type        = string
-  description = "Environment"
+  description = "Ambiente da instancia"
   default     = "dev"
 }
 
-variable "ebs_block_device" {
-  description = "Lista de volumes ebs para ser criado e montado na instancia"
+variable "ebs_block_devices" {
+  description = "lista de volumes ebs para ser criado e montando na instancia"
   type        = list(any)
   default     = []
 }
-
 
 variable "database_name" {
   type        = string
