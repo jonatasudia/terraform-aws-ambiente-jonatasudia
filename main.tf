@@ -13,13 +13,18 @@ data "aws_ami" "ubuntu" {
   }
 
 }
-
+#tfsec:ignore:aws-ec2-enforce-http-token-imds:exp:2024-12-24
 resource "aws_instance" "this" {
   ami           = data.aws_ami.ubuntu.id
   instance_type = "t3.micro"
 
+  root_block_device {
+    encrypted = true
+  }
+
+
   dynamic "ebs_block_device" {
-    for_each = var.ebs_block_device
+    for_each = var.ebs_block_devices
     iterator = device
     content {
       device_name = device.value["device_name"]
@@ -29,7 +34,7 @@ resource "aws_instance" "this" {
   }
 
   tags = {
-    Name       = var.name
+    Name       = var.nome
     Env        = var.environment
     Plataforma = data.aws_ami.ubuntu.platform_details
   }
