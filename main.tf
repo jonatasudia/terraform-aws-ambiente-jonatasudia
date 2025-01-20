@@ -22,6 +22,10 @@ resource "aws_instance" "this" {
     encrypted = true
   }
 
+  metadata_options {
+    http_tokens = "required"
+  }
+
 
   dynamic "ebs_block_device" {
     for_each = var.ebs_block_devices

@@ -13,4 +13,6 @@ resource "aws_db_instance" "rds_mysql" {
   tags = {
     Env = var.environment
   }
+
+  storage_encrypted = true
 }
