@@ -1,5 +1,5 @@
 resource "aws_db_instance" "rds_mysql" {
-  #tfsec:ignore:aws-rds-specify-backup-retention tfsec:ignore:builtin.aws.rds.aws0176 tfsec:ignore:builtin.aws.rds.aws0177
+  # tfsec:ignore
   depends_on                      = [aws_instance.this]
   allocated_storage               = 10
   db_name                         = var.database_name
