@@ -1,4 +1,6 @@
-#tfsec:ignore:aws-rds-specify-backup-retention tfsec:ignore:builtin.aws.rds.aws0176 tfsec:ignore:builtin.aws.rds.aws0177
+#tfsec:ignore:aws-rds-specify-backup-retention 
+#tfsec:ignore:builtin.aws.rds.aws0176 
+#tfsec:ignore:builtin.aws.rds.aws0177
 resource "aws_db_instance" "rds_mysql" {
   depends_on                      = [aws_instance.this]
   allocated_storage               = 10
